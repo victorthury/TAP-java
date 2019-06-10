@@ -1,0 +1,53 @@
+ show databases ;
+
+use reservasalasbd;
+
+show tables ;
+
+ CREATE TABLE `Usuario` (
+   `usuarioid` INT NOT NULL primary key auto_increment,
+   `nome` varchar(20) NOT NULL,
+   `funcao` varchar(20) NOT NULL,
+   PRIMARY KEY (`usuarioid`)
+ );
+
+ CREATE TABLE `Salas` (
+   `salaid` INT NOT NULL primary key auto_increment,
+   `nome` varchar(30) NOT NULL,
+   `tipo` varchar(30) NOT NULL,
+   PRIMARY KEY (`salaid`)
+ );
+
+ 
+
+ CREATE TABLE `Reserva` (
+   reservaid INT NOT NULL primary key AUTO_INCREMENT,
+   data varchar(10) NOT NULL,
+   horarioinicio INT NOT NULL,
+   horariofim INT NOT NULL,
+   salaid INT not null ,
+   usuarioid INT NOT NULL ,
+   tema varchar(30) not null ,
+   FOREIGN KEY (usuarioid) REFERENCES Usuario(usuarioid),
+   FOREIGN KEY (salaid) REFERENCES Salas(salaid)
+ );
+
+
+
+ insert into usuario values(123456789, 'Horácio', 'Professor');
+
+ insert into salas values(1, 'sala 01', 'laboratorio de graduacao');
+
+ insert into Reserva values(1, '11/11/2018', 8, 12,1, 123456789, 'TAP');
+
+ insert into usuario values(21752474, 'Victor', 'Aluno');
+
+ insert into salas values(2, 'sala 02', 'Sala de Seminários');
+
+ insert into Reserva values(2, '11/11/2018', 8, 12,2, 21752474, 'Meu Trabalho Java');
+
+ insert into usuario values(987654321, 'Fulano', 'Funcionário');
+
+ insert into salas values(3, 'sala 02', 'Sala de Seminários');
+
+ insert into Reserva values(3, '11/11/2018', 8, 12,3, 987654321, 'Reserva das Salas do ICOMP');

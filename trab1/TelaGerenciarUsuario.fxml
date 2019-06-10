@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="629.0" style="-fx-background-color: #39423f;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tableUsuarios" layoutX="215.0" layoutY="33.0" prefHeight="297.0" prefWidth="387.0">
+        <columns>
+          <TableColumn prefWidth="139.3333740234375" text="UsuarioId" />
+          <TableColumn prefWidth="120.6666259765625" text="Nome" />
+            <TableColumn prefWidth="126.0" text="Função" />
+        </columns>
+      </TableView>
+      <Button fx:id="buttonCriarUsuario" layoutX="15.0" layoutY="38.0" mnemonicParsing="false" onAction="#handleButtonCriarUsuario" prefHeight="25.0" prefWidth="117.0" text="Criar Usuário" />
+      <Button fx:id="buttonRemoverUsuario" layoutX="15.0" layoutY="71.0" mnemonicParsing="false" onAction="#handleButtonRemoverUsuario" prefHeight="25.0" prefWidth="117.0" text="Remover Usuário" />
+      <Button fx:id="buttonAlterarUsuario" layoutX="15.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleButtonAlterarUsuario" prefHeight="25.0" prefWidth="117.0" text="Alterar Usuário" />
+      <Text fill="WHITE" layoutX="329.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tabela de Usuários" wrappingWidth="132.13672065734863" />
+      <Text fill="WHITE" layoutX="4.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciamento de Usuários" wrappingWidth="178.0000001192093" />
+      <VBox fx:id="campoCadastrarUsuario" layoutX="14.0" layoutY="140.0" prefHeight="241.0" prefWidth="178.0" spacing="5.0" visible="false">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Preencha os Campos para Criação de um Novo Usuário" wrappingWidth="177.3333155810833" />
+            <TextField fx:id="textUsuarioId" promptText="ID do Usuário" />
+            <TextField fx:id="textNomeUsuario" focusTraversable="false" prefHeight="25.0" prefWidth="178.0" promptText="Nome do Usuário">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textFuncaoUsuario" promptText="Função (Professor, Funcionario, etc.)">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font>
+            </TextField>
+            <Button fx:id="buttonConfirmarCadastro" mnemonicParsing="false" onAction="#handleButtonConfirmarCadastro" prefHeight="25.0" prefWidth="129.0" text="Confirmar Cadastro" />
+            <Label fx:id="textCampoAviso" prefHeight="17.0" prefWidth="167.0" text="Preencha todos os campos *" textFill="RED" visible="false" />
+            <Label fx:id="labelAlertaExiste" prefHeight="17.0" prefWidth="131.0" text="ID de Usuário Existente*" textFill="RED" visible="false" />
+         </children>
+      </VBox>
+      <VBox fx:id="vboxRemover" layoutX="14.0" layoutY="140.0" prefHeight="200.0" prefWidth="177.0" spacing="5.0" visible="false">
+         <children>
+            <Label fx:id="labelRemover" prefHeight="21.0" prefWidth="169.0" text="Preencha os campos" textFill="WHITE" />
+            <TextField fx:id="textUsuarioRemover" promptText="ID de Usuário a ser removido" />
+            <Button fx:id="buttonConfirmaRemocao" mnemonicParsing="false" onAction="#handleButtonConfirmaRemocao" prefHeight="25.0" prefWidth="128.0" text="Confirmar Remoção" />
+            <Label fx:id="labelUsuarioNaoExiste" prefHeight="17.0" prefWidth="163.0" text="ID Não Existe*" textFill="RED" visible="false" />
+            <Label fx:id="labelCamposRemover" text="Preencha Todos os Campos*" textFill="RED" visible="false" />
+         </children>
+      </VBox>
+      <Label fx:id="labelUsuarioApagado" layoutX="12.0" layoutY="182.0" prefHeight="17.0" prefWidth="162.0" text="Usuario apagado." textFill="LIME" visible="false" />
+      <VBox fx:id="vboxAlterarUsuario" layoutX="7.0" layoutY="144.0" prefHeight="217.0" prefWidth="189.0" spacing="5.0" visible="false">
+         <children>
+            <Label fx:id="labelAlterarUsuario" prefHeight="17.0" prefWidth="184.0" text="Preencha o que se deseja mudar" textFill="WHITE" />
+            <TextField fx:id="textIdAlteracao" promptText="ID do usuario que será alterado" />
+            <TextField fx:id="textNomeAlteracao" promptText="Nome" />
+            <TextField fx:id="textFuncaoAltercao" promptText="Função" />
+            <Button fx:id="buttonConfirmaAlteracao" mnemonicParsing="false" onAction="#handeButtonConfirmaAlteracao" prefHeight="25.0" prefWidth="127.0" text="Confirmar alteração" />
+            <Label fx:id="labelAlterarNaoExiste" prefHeight="17.0" prefWidth="171.0" text="ID Não Existe*" textFill="RED" visible="false" />
+         </children>
+      </VBox>
+      <Label fx:id="labelUsuarioCriado" layoutX="15.0" layoutY="191.0" prefHeight="17.0" prefWidth="145.0" text="Usuário Criado" textFill="LIME" visible="false" />
+      <Label fx:id="labelUsuarioAlterado" layoutX="15.0" layoutY="191.0" prefHeight="17.0" prefWidth="189.0" text="Dados do Usuario Foram Alterados" textFill="LIME" visible="false" />
+      <Button fx:id="buttonAtualizaTabela" layoutX="350.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleButtonAtualizaTabela" prefHeight="25.0" prefWidth="117.0" text="Atualizar Tabela" />
+   </children>
+</AnchorPane>

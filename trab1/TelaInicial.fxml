@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="275.0" style="-fx-background-color: #39423f;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button fx:id="buttonGerenciarUsuarios" layoutX="71.0" layoutY="30.0" mnemonicParsing="false" onAction="#irParaTelaDeGerenciarUsuarios" prefHeight="25.0" prefWidth="133.0" text="Gerenciar Usuários" AnchorPane.leftAnchor="71.0" AnchorPane.topAnchor="30.0" />
+      <Button fx:id="buttonGerenciarSalas" layoutX="71.0" layoutY="75.0" mnemonicParsing="false" onAction="#irParaTelaDeGerenciarSalas" prefHeight="25.0" prefWidth="133.0" text="Gerenciar Salas" AnchorPane.topAnchor="75.0" />
+      <Button fx:id="buttonReservaSalas" layoutX="71.0" layoutY="119.0" mnemonicParsing="false" onAction="#irParaTelaDeGerenciarReservas" prefHeight="25.0" prefWidth="133.0" text="Ver ou Reservar Salas" AnchorPane.leftAnchor="71.0" AnchorPane.topAnchor="119.0" />
+   </children>
+</AnchorPane>

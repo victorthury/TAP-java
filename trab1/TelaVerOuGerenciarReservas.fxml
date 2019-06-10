@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="813.0" style="-fx-background-color: #39423f;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerTelaReservas">
+   <children>
+      <VBox layoutX="14.0" layoutY="4.0" prefHeight="145.0" prefWidth="122.0" spacing="10.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="133.0" text="Gerenciar Reservas" textFill="WHITE" />
+            <Button fx:id="buttonCriarReserva" mnemonicParsing="false" onAction="#handleButtonCriarReserva" prefHeight="25.0" prefWidth="106.0" text="Criar Reserva" />
+            <Button fx:id="buttonApagarReserva" mnemonicParsing="false" onAction="#handleButtonApagarReserva" prefHeight="25.0" prefWidth="105.0" text="Apagar Reserva" />
+         </children>
+      </VBox>
+      <VBox fx:id="campoCriarReserva" layoutX="14.0" layoutY="100.0" prefHeight="331.0" prefWidth="174.0" spacing="5.0" visible="false">
+         <children>
+            <Label prefHeight="17.0" prefWidth="149.0" text="Campo de Criar Reserva" textFill="WHITE" />
+            <TextField fx:id="textReservaId" promptText="Reserva Id" />
+            <TextField fx:id="textData" promptText="Data DD/MM/AAAA" />
+            <TextField fx:id="textHoraInicio" promptText="Hora Inicio" />
+            <TextField fx:id="textHoraFim" promptText="Hora Fim" />
+            <TextField fx:id="textIdSala" promptText="Id Sala" />
+            <TextField fx:id="textIdUsuario" promptText="Id Usuário" />
+            <TextField fx:id="textTema" promptText="Tema" />
+            <Button fx:id="buttonConfirmaReserva" mnemonicParsing="false" onAction="#handleButtonConfirmaReserva" prefHeight="25.0" prefWidth="117.0" text="Confirmar Reserva" />
+            <Label fx:id="labelOcupado" prefHeight="94.0" prefWidth="171.0" text="Horário Ocupado, Preencha todos os campos" textFill="RED" visible="false" wrapText="true" />
+            <Label fx:id="labelAlerta" prefHeight="35.0" prefWidth="174.0" text="Preencha todos os campos*" textAlignment="JUSTIFY" textFill="RED" visible="false" wrapText="true" />
+         </children>
+      </VBox>
+      <TableView fx:id="tabelaReservas" layoutX="204.0" layoutY="42.0" prefHeight="319.0" prefWidth="569.0">
+        <columns>
+          <TableColumn prefWidth="68.0" text="IdReserva" />
+          <TableColumn prefWidth="70.66668701171875" text="Data" />
+            <TableColumn prefWidth="74.6666259765625" text="Hora Inicio" />
+            <TableColumn prefWidth="67.3333740234375" text="HoraFim" />
+            <TableColumn prefWidth="102.66665649414062" text="Tema" />
+            <TableColumn prefWidth="88.66668701171875" text="id Usuario" />
+            <TableColumn prefWidth="93.99993896484375" text="idSala" />
+        </columns>
+      </TableView>
+      <Label layoutX="214.0" layoutY="20.0" prefHeight="17.0" prefWidth="174.0" text="Reservas " textFill="WHITE" />
+      <Label fx:id="labelReservaCriada" layoutX="10.0" layoutY="149.0" prefHeight="17.0" prefWidth="129.0" text="Reserva Criada" textFill="LIME" visible="false" />
+      <VBox layoutX="209.0" layoutY="362.0" prefHeight="25.0" prefWidth="455.0" spacing="5.0">
+         <children>
+            <HBox prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button fx:id="buttonTodasAsReservas" mnemonicParsing="false" onAction="#handleButtonTodasAsReservas" prefHeight="25.0" prefWidth="120.0" text="Todas as Reservas" />
+                  <Button fx:id="buttonReservasPorSala" mnemonicParsing="false" onAction="#handleButtonReservasPorSala" prefHeight="25.0" prefWidth="117.0" text=" Reservas por Sala" />
+                  <Button fx:id="buttonReservasPorUsuario" mnemonicParsing="false" onAction="#handleButtonReservasPorUsuario" prefHeight="25.0" prefWidth="132.0" text="Reservas por Usuário" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="vboxApagarReserva" layoutX="14.0" layoutY="114.0" prefHeight="200.0" prefWidth="174.0" spacing="5.0" visible="false">
+         <children>
+            <Label text="Apagar Reserva" textFill="WHITE" />
+            <TextField fx:id="textIdApagar" promptText="Id da Reserva" />
+            <Button fx:id="buttonConfirmaApagarReserva" mnemonicParsing="false" onAction="#handleConfirmaButtonApagarReserva" prefHeight="25.0" prefWidth="127.0" text="Confirma Apagar" />
+         </children>
+      </VBox>
+      <HBox fx:id="hboxPesquisaSala" layoutX="207.0" layoutY="390.0" prefHeight="32.0" prefWidth="390.0" spacing="75.0" visible="false">
+         <children>
+            <TextField fx:id="textProcuraSala" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#handleConfirmaPesquisaSala" prefHeight="25.0" prefWidth="174.0" promptText="Insira a Procura" />
+            <Button fx:id="buttonConfirmaPesquisaSala" mnemonicParsing="false" onAction="#handleConfirmaPesquisaSala" prefHeight="25.0" prefWidth="127.0" text="Confirma Pesquisa" />
+         </children>
+      </HBox>
+      <HBox fx:id="hboxPesquisaPorUsuario" layoutX="207.0" layoutY="391.0" prefHeight="42.0" prefWidth="381.0" spacing="102.0" visible="false">
+         <children>
+            <TextField fx:id="textPesquisaIdUsuario" promptText="Id Usuario" />
+            <Button fx:id="buttonConfirmaPesquisaUsuario" mnemonicParsing="false" onAction="#handleButtonConfirmaPesquisaUsuario" prefHeight="25.0" prefWidth="117.0" text="Confirma Pesquisa" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

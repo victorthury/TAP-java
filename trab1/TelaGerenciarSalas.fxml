@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="629.0" style="-fx-background-color: #39423f;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerTelaSalas">
+   <children>
+      <TableView fx:id="tableSalas" layoutX="212.0" layoutY="43.0" prefHeight="297.0" prefWidth="387.0">
+         <columns>
+            <TableColumn prefWidth="104.00006103515625" text="SalaId" />
+            <TableColumn prefWidth="122.0" text="Nome Sala" />
+            <TableColumn prefWidth="160.66668701171875" text="Função" />
+         </columns>
+      </TableView>
+      <Button fx:id="buttonCriarSala" layoutX="15.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleButtonCriarSala" prefHeight="25.0" prefWidth="117.0" text="Criar Sala" />
+      <Button fx:id="buttonRemoverSala" layoutX="15.0" layoutY="75.0" mnemonicParsing="false" onAction="#handleButtonRemoverSala" prefHeight="25.0" prefWidth="117.0" text="Remover Sala" />
+      <Button fx:id="buttonAlterarSala" layoutX="15.0" layoutY="107.0" mnemonicParsing="false" onAction="#handleButtonAlterarSala" prefHeight="25.0" prefWidth="117.0" text="Alterar Sala" />
+      <Text fill="WHITE" layoutX="329.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tabela de Salas" wrappingWidth="132.13672065734863" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciamento de Salas" wrappingWidth="178.0000001192093" />
+      <VBox fx:id="campoCadastroSala" layoutX="14.0" layoutY="140.0" prefHeight="200.0" prefWidth="178.0" spacing="10.0" visible="false">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Preencha os Campos" wrappingWidth="117.33334609866142" />
+            <TextField fx:id="textIdSala" promptText="ID da Sala" />
+            <TextField fx:id="textNomeSala" focusTraversable="false" prefHeight="25.0" prefWidth="178.0" promptText="Nome Para Sala">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textFuncaoSala" prefHeight="25.0" prefWidth="178.0" promptText="Função Para Sala">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="buttonConfirmarSala" mnemonicParsing="false" onAction="#handleButtonConfirmarSala" prefHeight="25.0" prefWidth="117.0" text="Confirmar Sala" />
+            <Label fx:id="labelAviso" prefHeight="17.0" prefWidth="170.0" text="Preencha todos os campos*" textFill="RED" visible="false" />
+            <Label fx:id="labelSalaExiste" prefHeight="17.0" prefWidth="169.0" text="Id de Sala Já Existente*" textFill="RED" visible="false" />
+         </children>
+      </VBox>
+      <VBox fx:id="vboxRemocao" layoutX="14.0" layoutY="147.0" prefHeight="200.0" prefWidth="178.0" spacing="5.0" visible="false">
+         <children>
+            <Label prefHeight="17.0" prefWidth="122.0" text="Remover Sala" textFill="WHITE" />
+            <TextField fx:id="textRemoverId" promptText="Id de Sala a ser Removida" />
+            <Button fx:id="buttonConfirmaRemoção" mnemonicParsing="false" onAction="#handleButtonConfirmaRemocao" prefHeight="25.0" prefWidth="122.0" text="Confirmar Remoção" />
+            <Label fx:id="labelPreenchaRemocao" prefHeight="17.0" prefWidth="162.0" text="Preencha o Campo*" textFill="RED" visible="false" />
+            <Label fx:id="labelIdRemocaoNaoExiste" prefHeight="17.0" prefWidth="149.0" text="Id Não Existe*" textFill="RED" visible="false" />
+         </children>
+      </VBox>
+      <Button fx:id="buttonAtualizarSalas" layoutX="364.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleButtonAtualizarSalas" prefHeight="25.0" prefWidth="92.0" text="Atualizar" />
+      <VBox fx:id="vboxAlteraSala" layoutX="15.0" layoutY="153.0" prefHeight="220.0" prefWidth="178.0" spacing="5.0" visible="false">
+         <children>
+            <Label prefHeight="17.0" prefWidth="161.0" text="Preencha os Campos" textFill="WHITE" />
+            <TextField fx:id="textAlterarId" promptText="Id" />
+            <TextField fx:id="textNomeAlterar" promptText="Nome Sala" />
+            <TextField fx:id="textFuncaoAlterar" promptText="Função" />
+            <Button fx:id="buttonConfirmaAlteracao" mnemonicParsing="false" onAction="#handleButtonConfirmaAlteracao" prefHeight="25.0" prefWidth="155.0" text="Confirma Alteração" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
